@@ -1,0 +1,11 @@
+node_modules
+.env 
+log 
+logs
+
+.idea
+.DS_Store
+
+dist
+dist-ssr
+
