@@ -1,0 +1,7 @@
+Date 15.07.25
+    Goals:  Working on server side, will need a of cleaning, then will create a basic frontend to login to.
+            Here will also start working on my SQL DB, populating it with usere info! 
+            Eseentially, get the whole stack working and communicating before, continue this project!!  
+    Timescale: This willl probably take me around 8 hours to complete. 
+    Additional Notes: 
+

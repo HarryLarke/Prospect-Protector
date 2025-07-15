@@ -29,7 +29,7 @@ app.use(cookieParser())
 
 //UNPROTECTED ROUTES
 app.use('/reg', register)
-app.use('/logout', logout)
+app.use('/logout', )
 app.use('/auth', auth)
 
 //verify jwt...
@@ -37,6 +37,9 @@ app.use('/auth', auth)
 //PROTECTED ROUTES
 app.use('/prospects', prospects)
 app.use('/users', users)
+app.use('/sales', )
+//Will need role protection  
+
 
 app.all('/', (req, res) => {
     res.status(404)

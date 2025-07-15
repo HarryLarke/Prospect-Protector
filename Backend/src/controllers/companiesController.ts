@@ -17,7 +17,7 @@ export const getCompany = async (req: Request, res: Response) => {
 }
 
 export const addCompany = async (req: Request, res: Response) => {
-    const { name, employees, revenue, address, notes} = req.body
+    const { name, employees, revenue, address, notes, totalSales} = req.body
     const newCompany = { name, employees, revenue, address, notes}
     if(!name || employees?.employee) {
         res.status(400).json({message: 'Each company requires a name and atleast one employee.'})

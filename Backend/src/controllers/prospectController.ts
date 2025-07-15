@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import bcrypt, { compare } from 'bcrypt'
 import { send } from 'process';
 //keep it simple for now and then more features...
+//Woud be great to add a sales bit? Then a seperate table for sales data for different users.
 
 export const addProspect = async (req: Request, res: Response ) => {
     const { prospectname, comapany, role, rep, notes} = req.body
@@ -45,8 +46,7 @@ export const getprospect = async (req: Request, res: Response) => {
 
 export const editprospect = async (req: Request, res: Response) => {
     const { _id } = req.params 
-    const { prospectname, role } = req.body 
-
+    const { prospectName, role, company, rep, notes } = req.body 
     if(!_id ) {
         res.status(400).json({message: 'prospect ID is required to edit prospect.'})
         return

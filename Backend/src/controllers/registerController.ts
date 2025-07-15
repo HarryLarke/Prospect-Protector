@@ -26,5 +26,4 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
         res.status(500).json({message: err?.message})
     }
 }
-
 //Will need to properly typecast my errors!

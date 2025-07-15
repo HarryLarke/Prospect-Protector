@@ -1,7 +1,10 @@
-import { deflateSync } from "zlib"
+import express from 'express'
+import { handleLogout } from '../controllers/logoutController'
 
-const logout = () => {
-    console.log('Logging Out...')
-}
 
-export default logout
+const router = express.Router()
+
+router.route('/')
+    .get(handleLogout)
+
+export default router
