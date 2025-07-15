@@ -12,7 +12,7 @@ import register from './routes/register';
 import logout from './routes/logout';
 import auth from './routes/auth';
 import prospects from './routes/api/prospects'
-import usesr from './routes/api/users'
+import users from './routes/api/users'
 
 import { logger } from './middleware/logEvents';
 
@@ -37,9 +37,8 @@ app.use('/auth', auth)
 //PROTECTED ROUTES
 app.use('/prospects', prospects)
 app.use('/users', users)
-app.use('/sales', )
-//Will need role protection  
-
+app.use('/sales', )``
+//Will need role protection -- which00000 can be done in the routes!  
 
 app.all('/', (req, res) => {
     res.status(404)
@@ -51,3 +50,4 @@ app.all('/', (req, res) => {
 app.use(logError)
 
 app.listen(PORT, () =>  console.log(`running on PORT ${PORT}`))
+
