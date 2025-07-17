@@ -1,27 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit' 
 
-import type { Auth } from '../../types/auth'
+import type { AuthState, Credentials } from '../../types/auth'
 
-const initialState: Auth = {
-    user: null, 
-    roles: null,
-    accessToken: null
+const initialState: AuthState = {
+    credentials: null 
 } 
 
 const authSlice = createSlice({
     name: 'auth', 
     initialState,
     reducers: {
-        setCredentials: (state, action) => {
-            const { user, roles, accessToken } = action.payload
-            state.user = user
-            state.roles = roles 
-            state.accessToken = accessToken
+        setCredentials(state, action:PayloadAction<Credentials | null>) {
+            state.credentials = action.payload
         },
+        
         logout: (state) => {
-            state.user = null 
-            state.roles = null
-            state.accessToken = null 
+            state.credentials = null
         }  
     }
 })
@@ -38,3 +33,5 @@ export default authSlice.reducer
 //Do I need to show types at some point too? 
 
 //User hooks to simpilify? 
+
+//I'm abit concerned whethert the credentials will clear??
