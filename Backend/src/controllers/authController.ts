@@ -43,5 +43,9 @@ export const handleLogin = async (req: Request, res: Response) => {
         foundUser.refreshToken = refreshToken
         const result = await foundUser.save()  //So... I don't know if I will accomodate RT's on my DB??? but, can they be stored as http cookies?? 
         console.log(result) //remove in prod! 
+
+        res.cookie('jwt', refreshToken, {httpOnly: true, maxAge: 24 * 60 * 60 * 1000}) 
+        res.json({accessToken})
+        
     } else {res.sendStatus(401)}
 }

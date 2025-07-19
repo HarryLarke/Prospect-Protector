@@ -4,6 +4,7 @@ export interface UserCredentials {
 }
 
 export interface Roles {
+    find(arg0: (role: any) => boolean): unknown
     user: number,
     editor: number,
     admin: number
@@ -22,4 +23,12 @@ export interface AuthState {
 export interface UserCredentials {
     username: string,
     pwd: string, 
+}
+
+export interface RefreshResponse {
+    data: {
+        user: string, 
+        roles: Roles,
+        accessToken: string
+    }
 }
