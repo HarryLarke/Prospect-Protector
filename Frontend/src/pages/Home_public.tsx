@@ -16,9 +16,9 @@ const Home_public = () => {
 
                 </article>
 
-                <Link>About Us</Link>
-                <Link>Register</Link>
-                <Link>Login</Link>
+                <Link to='aboutUs'>About Us</Link>
+                <Link to='register'>Register</Link>
+                <Link to='login'>Login</Link>
 
             </section>
 

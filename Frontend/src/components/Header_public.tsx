@@ -6,13 +6,13 @@ const Header_public = () => {
         <header>
 
             <div>
-                <Link>Home</Link>
-                <Link>About Us</Link>
+                <Link to='/'>Home</Link>
+                <Link to='/aboutUs'>About Us</Link>
             </div>
             
             <div>
-                <Link>Register</Link>
-                <Link>Login</Link>
+                <Link to='register'>Register</Link>
+                <Link to='login'>Login</Link>
             </div>
         </header>
     )

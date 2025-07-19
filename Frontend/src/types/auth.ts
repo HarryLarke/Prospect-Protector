@@ -1,7 +1,13 @@
-export interface UserCredentials {
-    username: string,
+export interface LoginRequest {
+    user: string,
     pwd: string
 }
+
+export interface LoginResponse {
+    user: string,
+    roles: Roles,
+    accessToken: string,
+} 
 
 export interface Roles {
     find(arg0: (role: any) => boolean): unknown
@@ -31,4 +37,8 @@ export interface RefreshResponse {
         roles: Roles,
         accessToken: string
     }
+}
+
+export interface RequireAuthProps {
+    allowedRoles : number[]
 }

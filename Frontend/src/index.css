@@ -1,3 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -17,4 +28,21 @@
   --WHITE: #FCFCFC;
 }
 
+.body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--WHITE);
+}
 
+
+/*TAILS8*/ 
+
+.offscreen {
+  position: absolute;
+  left: -9999px
+}
+
+.errMsg {
+  background-color: var(--OFFWHITE);
+  color: red;
+}

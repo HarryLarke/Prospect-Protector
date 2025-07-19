@@ -1,5 +1,5 @@
 
-const Home = () => {
+const Dashboard = () => {
 
     return(
         <main>
@@ -8,4 +8,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Dashboard

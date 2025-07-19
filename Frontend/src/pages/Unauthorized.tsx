@@ -10,7 +10,7 @@ const Unauthorized = () => {
             <section>
                 <p>You do not have accesss to this page.</p>
                 <br />
-                <p>Please return to <Link to={'/home'}>Home</Link></p>
+                <p>Please return to <Link to={'/'}>Home</Link></p>
             </section>
         </main>
     ) 

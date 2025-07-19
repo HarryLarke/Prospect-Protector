@@ -6,7 +6,7 @@ const footerText = '--Prospect Protector 2025--'
 
 const Layout_public = () => {
     return(
-        <div>
+        <div className="body">
             <Header_public/>
             <Outlet/>
             <footer>{footerText}</footer>
