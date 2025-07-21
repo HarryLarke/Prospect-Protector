@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery, type FetchBaseQueryError, type QueryReturnValue } from "@reduxjs/toolkit/query/react";
-import { useSelection } from "../../hooks/useSelections";
 
+ 
 import type { LoginResponse } from "../../types/auth"; 
+import { logout, setCredentials } from "../auth/authSlice";
  
 
 //URL: will change, potentially sourced from the dotenv file...
@@ -10,8 +11,8 @@ import type { LoginResponse } from "../../types/auth";
 const baseQuery = fetchBaseQuery({
     baseUrl: 'http://localhost:3500', 
     credentials: 'include',
-    prepareHeaders: (headers) => {
-        const token = newCredentials?.accessToken
+    prepareHeaders: (headers, {getState} ) => {
+        const token = getState().auth.accessToken
         if(token) {
             headers.set("authorization", `Bearer ${token}`)
         } return headers
@@ -30,11 +31,11 @@ const baseQueryWithReauth = async (args: any, api: any, extraOptions: any,) => {
             const { user, roles, accessToken } = refreshResult.data
                 //Will need to double check these types of cast correctly onto the data and what not! 
                 //Whatever, the credentials should be set when calling the refreshtoken as in the cookies and the AT will be sent in the headers!
-            api.dispatch(setNewCredentials({user, roles, accessToken}))
+            api.dispatch(setCredentials({user, roles, accessToken}))
 
             result = await baseQuery(args, api, extraOptions)
         } else{
-            api.dispatch(clearCrendentials())
+            api.dispatch(logout())
         }
     }
     return result 
@@ -46,4 +47,3 @@ export const apiSlice = createApi({
     tagTypes: ['Auth', 'Users'],
     endpoints: () => ({})
 })
-

@@ -10,7 +10,6 @@ export interface LoginResponse {
 } 
 
 export interface Roles {
-    find(arg0: (role: any) => boolean): unknown
     user: number,
     editor: number,
     admin: number
@@ -18,7 +17,7 @@ export interface Roles {
 
 export interface Credentials {
     user: string | null, 
-    roles: Roles | null, 
+    roles: number[] | null, 
     accessToken: string | null
 }
 

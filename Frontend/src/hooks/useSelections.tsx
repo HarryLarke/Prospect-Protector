@@ -10,10 +10,13 @@ import { setCredentials, logout } from '../features/auth/authSlice'
 export const useSelection = () => {
     
     const dispatch = useDispatch<AppDispatch>()
-    const newCredentials = useSelector((state: RootState) => state.auth.credentials) 
+    const newCredentials = useSelector((state: RootState) => {
+        state.auth.user,
+        state.auth.roles,
+        state.auth.accessToken}) 
 
-    const setNewCredentials = (credentials: Credentials | null) => {
-        dispatch(setCredentials(credentials))
+    const setNewCredentials = (user: string, roles: number[], accessToken: string) => {
+        dispatch(setCredentials({user, roles, accessToken}))
     }
 
     const clearCrendentials = () => {
