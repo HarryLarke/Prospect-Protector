@@ -5,7 +5,7 @@ import type { LoginResponse } from "../../types/auth";
  
 
 //URL: will change, potentially sourced from the dotenv file...
-const { newCredentials, setNewCredentials, clearCrendentials } = useSelection() 
+
 
 const baseQuery = fetchBaseQuery({
     baseUrl: 'http://localhost:3500', 
@@ -30,11 +30,11 @@ const baseQueryWithReauth = async (args: any, api: any, extraOptions: any,) => {
             const { user, roles, accessToken } = refreshResult.data
                 //Will need to double check these types of cast correctly onto the data and what not! 
                 //Whatever, the credentials should be set when calling the refreshtoken as in the cookies and the AT will be sent in the headers!
-            setNewCredentials({user, roles, accessToken})
+            api.dispatch(setNewCredentials({user, roles, accessToken}))
 
             result = await baseQuery(args, api, extraOptions)
         } else{
-            clearCrendentials()
+            api.dispatch(clearCrendentials())
         }
     }
     return result 
