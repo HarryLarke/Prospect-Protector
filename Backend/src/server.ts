@@ -7,11 +7,12 @@ import cookieParser from 'cookie-parser';
 import corsOptions from './config/corsOptions';
 import logError from './middleware/logError';
 import credentials from './middleware/credentials';
+import verifyJWT from './middleware/verifyJWT';
 
 import register from './routes/register';
 import logout from './routes/logout';
 import auth from './routes/auth';
-import prospects from './routes/api/prospects'
+
 import users from './routes/api/users'
 
 import { logger } from './middleware/logEvents';
@@ -29,15 +30,15 @@ app.use(cookieParser())
 
 //UNPROTECTED ROUTES
 app.use('/reg', register)
-app.use('/logout', )
+app.use('/logout', logout)
 app.use('/auth', auth)
 
 //verify jwt...
-
+app.use()
 //PROTECTED ROUTES
-app.use('/prospects', prospects)
+
 app.use('/users', users)
-app.use('/sales', )``
+
 //Will need role protection -- which00000 can be done in the routes!  
 
 app.all('/', (req, res) => {

@@ -4,3 +4,12 @@ Date 15.07.25
             Eseentially, get the whole stack working and communicating before, continue this project!!  
     Timescale: This willl probably take me around 8 hours to complete. 
     Additional Notes: 
+
+Date 22.07.2
+        Progress: Welp, I've built out some of the fronted fror RTK, mainly on the auth side. Things appear to run in dev, with my queries
+                and auth set up.
+        Goals: Now I'm coming back to the server and adding some of the verification middleware. After that I will begin to structure and 
+                popalate my DB!!!! I plan to keep relatively basic for and I might event strip some thing back off my sever just to get things
+                running.  
+        Timescale: 4 to 8 hours.
+        Additional notes: wish me luck! 
