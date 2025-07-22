@@ -61,37 +61,41 @@ const Login = () => {
     }
 
     if(!isLoading) {content = (
-        <main>
+        <main className="login-page">
 
-            <h1>Login</h1>
+            <section className="login-container">
 
-            <p ref={errRef} className={errMsg ? 'errMsg' : 'offscreen'}
-            >{errMsg}</p>
+                <h1>Login</h1>
 
-            <form className="loginForm"
-            onSubmit={handleLogin}>
-                <label htmlFor="user">Username</label>
-                <input
-                type="text"
-                ref={userRef}
-                id="user"
-                value={user}
-                onChange={handleUserInput}
-                placeholder="AlexTrill"
-                required
-                />
-                <label htmlFor="pwd">Password</label>
-                <input
-                type="password"
-                ref={userRef}
-                id="pwd"
-                value={pwd}
-                onChange={handlePwdInput}
-                required
+                <p ref={errRef} className={errMsg ? 'errMsg' : 'offscreen'}
+                >{errMsg}</p>
+
+                <form className="login-form"
+                onSubmit={handleLogin}>
+                    <label className='login-label' htmlFor="user">Username:</label>
+                    <input
+                    className="login-input"
+                    type="text"
+                    ref={userRef}
+                    id="user"
+                    value={user}
+                    onChange={handleUserInput}
+                    placeholder="AlexTrill"
+                    required
                     />
-                    <button>Login</button>
-                </form>
-    
+                    <label className='login-label' htmlFor="pwd">Password:</label>
+                    <input
+                    className="login-input"
+                    type="password"
+                    ref={userRef}
+                    id="pwd"
+                    value={pwd}
+                    onChange={handlePwdInput}
+                    required
+                        />
+                        <button className='login-button'>Login</button>
+                    </form>
+            </section>
         </main>
     )} else content = (<main><h1>Loading...</h1></main>)
 

@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 
 import { type AppDispatch, type RootState } from '../app/store';
-import type { Credentials } from '../types/auth'
 
 import { setCredentials, logout } from '../features/auth/authSlice'
 
