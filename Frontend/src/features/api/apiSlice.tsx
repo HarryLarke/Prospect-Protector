@@ -35,7 +35,7 @@ const baseQueryWithReauth = async (args: any, api: any, extraOptions: any,) => {
 
             result = await baseQuery(args, api, extraOptions)
         } else{
-            api.dispatch(logout())
+            api.dispatch(logout())//Will need to sent a request to the backend too!
         }
     }
     return result 

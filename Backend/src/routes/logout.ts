@@ -1,10 +1,10 @@
 import express from 'express'
-import { handleLogout } from '../controllers/logoutController'
+import  logoutController  from '../controllers/logoutController'
 
 
 const router = express.Router()
 
 router.route('/')
-    .get(handleLogout)
+    .get(logoutController)
 
 export default router

@@ -34,7 +34,7 @@ app.use('/logout', logout)
 app.use('/auth', auth)
 
 //verify jwt...
-app.use()
+app.use(verifyJWT)
 //PROTECTED ROUTES
 
 app.use('/users', users)
