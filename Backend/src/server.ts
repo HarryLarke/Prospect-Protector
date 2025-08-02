@@ -9,7 +9,6 @@ import logError from './middleware/logError';
 import credentials from './middleware/credentials';
 import verifyJWT from './middleware/verifyJWT';
 
-import register from './routes/register';
 import logout from './routes/logout';
 import auth from './routes/auth';
 
@@ -29,9 +28,6 @@ app.use(express.json())
 app.use(cookieParser())
 
 //UNPROTECTED ROUTES
-app.use('/reg', register)
-app.use('/logout', logout)
-app.use('/auth', auth)
 app.use('/users', users)
 
 //verify jwt...

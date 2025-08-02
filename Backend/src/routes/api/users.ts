@@ -4,8 +4,13 @@ import { getUser, addUser, getAllUsers, editUser, deleteUser } from '../../contr
 const router = express.Router()
 
 router.route('/') 
-    .get(getUser)
+    .get(getAllUsers)
     .post(addUser)
+    
+router.route('/:_id')
+    .get(getUser)
+    .delete(deleteUser) 
     .put(editUser)
-    .delete(deleteUser) //Will send params here!
+
+export default router
      
