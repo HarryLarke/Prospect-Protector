@@ -1,6 +1,5 @@
 import React, {useRef, useState, useEffect, type FormEvent} from 'react'
 import { useRegisterMutation } from '../features/auth/authApiSlice'
-import { Link } from 'react-router'
 
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/
@@ -122,19 +121,16 @@ const Register = () => {
                     onFocus={() => setPwdFocus(true)}
                     onBlur={() => setPwdFocus(false)}/>
                     
-                    <button className='button-mini' onClick={handleShowPassword}>Show</button>
+                    <button className='button-mini' onClick={handleShowPassword}>{showPwd ? "hide" : "show"}</button>
                     </div>
 
                        <p id='pwdnote' className={pwdFocus && pwd && !validPwd ? 'instructions' : 'offscreen'}>
                         8 to 24 characters.<br/>
-                        Must include uppercase and lowercase letters, a number and a special character.<br/>
+                        Must include uppercase and lowercase letters,<br/> 
+                        a number and a special character.<br/>
                         Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span>
                         <span aria-label="pond sign">£</span> <span aria-label="dollar sign">$</span> <span aria-label="percent symbol">%</span>
                     </p>
-
-                    
-                    
-
 
                     <label className='login-label' htmlFor='matchPwd'>Confirm Password:</label>
                     <input className='login-input'

@@ -5,7 +5,7 @@ import { send } from 'process';
 
 export const addUser = async (req: Request, res: Response ) => {
     const { username, pwd, role } = req.body
-    const duplicate = User.findOne({username: username})
+    const duplicate = User.findOne({username: username}) ///So we'll esseentiall import this function into the controller...
 
     //Use db to assign default role of user - using the db *generally need to come up with a way to figurate db and role assignment!
     if(!username || !pwd || !role) {

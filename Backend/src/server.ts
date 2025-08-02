@@ -32,12 +32,12 @@ app.use(cookieParser())
 app.use('/reg', register)
 app.use('/logout', logout)
 app.use('/auth', auth)
+app.use('/users', users)
 
 //verify jwt...
-app.use(verifyJWT)
+
 //PROTECTED ROUTES
 
-app.use('/users', users)
 
 //Will need role protection -- which00000 can be done in the routes!  
 
