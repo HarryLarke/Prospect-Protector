@@ -5,7 +5,7 @@ The other aim is to use and apply secure login and logout skills using JWT's and
 
 The actual project is essentially a basic CRM tool. The reason why I chose such a tool, is CRM's require security, scability and utilise SQL DB's. 
 
-PLEASE NOTE: This project is still in its' early stages of devlopment! I aim to keep chipping away at this projec over the next few months! 
+PLEASE NOTE: This project is still in its' early stages of devlopment! I aim to keep chipping away at this project over the next few months! 
 
 Thanks,
 Harry 
