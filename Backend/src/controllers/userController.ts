@@ -11,10 +11,12 @@ export const addUser = async (req: Request, res: Response ) => {
         return
     } 
     try {
-        await addNewUser(username, pwd)
+        const result = await addNewUser(username, pwd)
+        console.log(result)
         res.sendStatus(201).json({message: `New user created: ${username}`})
     } catch(err: unknown | any) {   
         res.sendStatus(500).json([{msesage: err?.message}])
+        console.log(err?.message)
         return
     }
 }
@@ -37,7 +39,7 @@ export const getUser = async (req: Request, res: Response) => {
 
 export const editUser = async (req: Request, res: Response) => {
     const { _id } = req.params 
-    const { username, role } = req.body 
+    const { username, role } = req.body //Will later add more features!
 
     if(!_id ) {
         res.status(400).json({message: 'User ID is required to edit user.'})

@@ -3,7 +3,9 @@ import { pool } from '../config/connDB';
 
 
 export const addNewUser = async (username: string, pwd: string) => {
-    const result = await pool.query("INSERT into users (username, pwd, role) VALUES (?, ?)", [username, pwd])
+    const [result] = await pool.query("INSERT into users (_id, username, pwd) VALUES (UUID(), ?, ?)", [username, pwd])
+    return result 
+
 }
 
 export const getUsers = async () => {

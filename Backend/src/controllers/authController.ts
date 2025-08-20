@@ -4,6 +4,9 @@ import jwt from 'jsonwebtoken'
 
 import { Request, Response } from 'express'
 
+const accessTokenSecret: string | undefined = process.env.ACCESS_TOKEN_SECRET
+const refreshTokenSecret: string | undefined = process.env.REFRESH_TOKEN_SECRET
+
 export const handleLogin = async (req: Request, res: Response) => {
     const { user, pwd } = req.body
     if(!user || !pwd) {
@@ -30,13 +33,13 @@ export const handleLogin = async (req: Request, res: Response) => {
                     "username" : foundUser.user,
                     "roles": roles
                 }}, 
-                process.env.ACCESS_TOKEN_SECRET,
+                accessTokenSecret,
                 { expiresIn: '3m'}
         )
 
         const refreshToken = jwt.sign(
             {"username": foundUser.user}, 
-            process.env.REFRESH_TOKEN_SECRET, 
+            refreshTokenSecret,
             {expiresIn: '30m'}
         )
 
