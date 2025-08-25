@@ -15,11 +15,13 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
 
     try{
         //const hashedPwd = await bcrypt.hash(pwd, 10)
-    
-        await addNewUser(username, pwd)
+        const result = await addNewUser(username, pwd)
+        console.log(result)
         res.status(201).json({message: `New user ${username} made.`})
+        
 
     } catch(err : unknown | any) {
         res.status(500).json({message: err?.message})
+        return
     }
 }

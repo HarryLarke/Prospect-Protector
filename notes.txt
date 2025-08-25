@@ -13,3 +13,13 @@ Date 22.07.2
                 running.  
         Timescale: 4 to 8 hours.
         Additional notes: wish me luck! 
+
+Date 25.08.25 
+	Progress: So backend and frontend are now communicating, with user reg now working! 
+	
+	Goals: Well, need to do some work with routing or pop up to show the success/outcome of 	the reg .
+	Additionally, would like to get my auth/login sorted too! This will require some work on 	
+	both the back and frontend alike. But, the actual code is written, just needs 	            	calibrating for mySQL Db. 
+	Timescale: 6 hours. 
+
+  

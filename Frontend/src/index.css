@@ -129,6 +129,24 @@ main {
   font-weight: 500;
 }
 
+.button-one {
+  height: 35px;
+  width: 70px;
+
+  background-color: var(--BLACK);
+  color: var(--WHITE);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+  border-radius: 5px;
+  border: solid var(--WHITE) 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .login-button {
   height: 40px;
   width: 70px;
@@ -203,6 +221,17 @@ main {
   gap: 1rem;
 }
 
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #fcfcfc6e;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 
 /*TAILS*/ 
@@ -224,6 +253,7 @@ a:hover {
 
 }
 
-.login-button:hover {
+.login-button,
+.button-one:hover {
   scale: 110%;
 }
