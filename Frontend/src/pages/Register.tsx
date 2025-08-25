@@ -57,7 +57,7 @@ const Register = () => {
         e.preventDefault()
 
         try{
-            const response = await register({user, pwd}).unwrap()
+            const response = await register({username: user, pwd}).unwrap()
             console.log(response) //Do we login afterward get get AT? Or go to login??
             
             //setNewCredentials??? 

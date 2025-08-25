@@ -7,5 +7,5 @@ The actual project is essentially a basic CRM tool. The reason why I chose such 
 
 PLEASE NOTE: This project is still in its' early stages of devlopment! I aim to keep chipping away at this project over the next few months! 
 
-Thanks,
+Thanks,  
 Harry 

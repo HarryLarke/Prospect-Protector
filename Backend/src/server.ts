@@ -11,6 +11,7 @@ import verifyJWT from './middleware/verifyJWT';
 
 import logout from './routes/logout';
 import auth from './routes/auth';
+import register from './routes/register'
 
 import users from './routes/api/users'
 
@@ -28,7 +29,9 @@ app.use(express.json())
 app.use(cookieParser())
 
 //UNPROTECTED ROUTES
-app.use('/users', users)
+
+app.use('/reg', register)
+app.use('/users', users)//this will enter the protect routes once I've set up my auth stuff!
 
 //verify jwt...
 

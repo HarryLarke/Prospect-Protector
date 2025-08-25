@@ -11,11 +11,11 @@ export const authApiSlice = apiSlice.injectEndpoints({
                 body: userCredentials 
             })
         }),
-        register: builder.mutation<AuthRequest>({
-            query: (userCredentials) => ({
+        register: builder.mutation<AuthRequest, {username: string, pwd: string}>({
+            query: ({username, pwd}) => ({
                 url: '/reg',
                 method: 'POST',
-                body: userCredentials
+                body: {username, pwd}
             })
         }),
         logout: builder.query({
